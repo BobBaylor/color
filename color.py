@@ -115,7 +115,7 @@ def genGlass( opts ):
     bDoShow = True if 't' in opts['--show'].lower() else False
 
     if opts['--test']:
-        print opts
+        print(opts)
 
     legend = ''.join( ['\n%2d of %s'% (a[0],a[1]) for a in zip(weights,gfNamelst)])
     # print legend
@@ -165,7 +165,7 @@ def genGlass( opts ):
                 iTile = pickTile()
             except ValueError:
                 if opts['--test']:
-                    print 'Ran out of tiles at',row,col
+                    print('Ran out of tiles at',row,col)
                 bRowsRemain = False
                 break
             dUsed[iTile] = dUsed[iTile]+1
@@ -198,8 +198,8 @@ def genGlass( opts ):
     tScale = sum(weights)*1.0/sum(dUsed)
     tChoice = ''.join( ['%.1f, '% (tScale*a[1]) for a in zip(weights,dUsed)])
     if opts['--test']:
-        print len(tileBag),'tiles of',cntTotalTiles,'remain.',
-        print 'Actual weights:',tChoice[:-2]
+        print(len(tileBag),'tiles of',cntTotalTiles,'remain.',)
+        print('Actual weights:',tChoice[:-2])
 
 
 

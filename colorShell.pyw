@@ -46,8 +46,11 @@ class MyPanel(wx.Panel):
             self.sc[-1].SetValue(val)
             hsizer1 = wx.BoxSizer( wx.HORIZONTAL )
             hsizer1.Add( self.sc[-1],        0, sflags, space)
-            bmp = wx.Image(img)
-            sbm = wx.StaticBitmap(self, wx.ID_ANY, wx.BitmapFromImage(bmp))
+            # bmp = wx.Image(img)
+            # sbm = wx.StaticBitmap(self, wx.ID_ANY, wx.BitmapFromImage(bmp))
+            # bmfi = wx.BitmapFromImage(bmp)
+            bmfi = wx.Bitmap(img)
+            sbm = wx.StaticBitmap(self, wx.ID_ANY, bmfi)
             hsizer1.Add(sbm, 0, sflags, space)
             self.sizer.Add( hsizer1,                0, sflags, space)
 
